@@ -16,3 +16,5 @@ $ chmod +x install-kali\
 $ ./install-kali
 ##### The above process is to add Kali Linux repository and changed Debian to Kali Linux
 ### ------------------------------------------
+### If Debian is already Kali Linux\follow this step to install GUI
+$ apt install xfce4
