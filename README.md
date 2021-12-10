@@ -1,6 +1,6 @@
 # Debian
 $ apt install git\
-$ git clone https://github.com/ArieSR91/install-debian\
+$ git clone https://github.com/ArieSR91/install-debian \
 $ cd install-debian\
 $ chmod +x start\
 $ ./start
