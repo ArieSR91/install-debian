@@ -4,6 +4,14 @@ bash fix-audio.sh
 touch $HOME/ ;echo "clear
 pulseaudio --start
 proot-distro login debian" >> $HOME/.bashrc
+touch ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/ ;echo "
+vncserver -kill :1
+vncserver -kill :2
+# vncserver -geometry 1280x720
+vncserver" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-start
+touch ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/ ;echo "
+vncserver -kill :1
+vncserver -kill :2" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-stop
 touch ../usr/var/lib/proot-distro/installed-rootfs/debian/root/ ;echo "apt update && apt upgrade -y && apmt install wget gnupg nano -y && wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add && echo -e '\033[1;92m' '
 add repository Kali Linux:
 
