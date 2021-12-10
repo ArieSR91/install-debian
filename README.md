@@ -38,9 +38,9 @@ $ nano /bin/vnc-start\
 vncserver -geometry (your screen resolution)
 
 After login to the vnc server,\
-wait for the desktop to load and logout\
+wait for desktop loaded and logout\
 so that there are no error during installation\
-Go back to the Debian CLI you changed to Kali on Termux
+Go back to Termux
 
 
 $ apt install 
