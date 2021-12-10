@@ -5,7 +5,7 @@ $ cd install debian\
 $ chmod +x start\
 $ ./start
 
-### After this operation complete you will automatically login to Debian as root\
+#### After this operation complete you will automatically login to Debian as root
 If you want to install Kali Linux on Debian\
 type: \
 $ ls
