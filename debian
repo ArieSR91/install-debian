@@ -1,6 +1,7 @@
 apt update && apt upgrade -y && apt install mc proot-distro pulseaudio -y && proot-distro install debian
 chmod +x fix-audio.sh
 bash fix-audio.sh
+pulseaudio --start
 touch $HOME/ ;echo "clear
 pulseaudio --start
 proot-distro login debian" >> $HOME/.bashrc
