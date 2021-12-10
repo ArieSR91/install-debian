@@ -4,6 +4,7 @@ bash fix-audio.sh
 pulseaudio --start
 touch $HOME/ ;echo "clear
 pulseaudio --start
+# proot-distro login --user (username) debian
 proot-distro login debian" >> $HOME/.bashrc
 touch ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/ ;echo "
 vncserver -kill :1
