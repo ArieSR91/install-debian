@@ -17,10 +17,11 @@ $ ./install-kali
 ##### The above process is to add Kali Linux repository and changed Debian to Kali Linux
 ### ------------------------------------------
 ## Kali Linux
-Do update & upgrade
+After Debian is changed to Kali Linux\
+do the update & upgrade command
 
 
-follow this step to install GUI \
+follow this step to install Kali Linux GUI \
 $ apt install xfce4 tigervnc-standalone-server dbus-x11
 
 
