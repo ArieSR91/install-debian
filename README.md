@@ -26,11 +26,11 @@ $ apt install xfce4 tigervnc-standalone-server dbus-x11
 
 
 After the installation process complete,\
-first login to vncviewer or Nethunter kex. \
+first login to vncviewer or Nethunter kex.
 
 
-vnc-start = start vnc server
-vnc-stop = stop vnc server
+vnc-start = start vnc server\
+vnc-stop = stop vnc server\
 
 
 if you want to edit screen resolution \
