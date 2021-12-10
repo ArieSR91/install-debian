@@ -1,4 +1,7 @@
 # Debian
+Install Debian on Termux
+
+
 $ apt install git\
 $ git clone https://github.com/ArieSR91/install-debian \
 $ cd install-debian\
