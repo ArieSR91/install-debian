@@ -11,4 +11,4 @@ type: \
 $ ls\
 $ chmod +x install-kali\
 $ ./install-kali\
-##### The above process is to add the Kali Linux repository
+##### The above process is to add the Kali Linux repository and changed Debian to Kali Linux
