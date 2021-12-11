@@ -31,7 +31,7 @@ chmod +x /bin/vnc-start\
 chmod +x /bin/vnc-stop\
 
 
-To login to vncviewer or Nethunter kex.
+To login to vncviewer or Nethunter kex.\
 vnc-start = start vnc server\
 vnc-stop = stop vnc server
 
