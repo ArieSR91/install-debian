@@ -30,7 +30,7 @@ first login to vncviewer or Nethunter kex.
 
 
 vnc-start = start vnc server\
-vnc-stop = stop vnc server\
+vnc-stop = stop vnc server
 
 
 if you want to edit screen resolution \
