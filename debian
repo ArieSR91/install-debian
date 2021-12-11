@@ -12,7 +12,7 @@ vncserver -kill :2
 vncserver" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-start
 touch ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/ ;echo "vncserver -kill :1
 vncserver -kill :2" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-stop
-touch ../usr/var/lib/proot-distro/installed-rootfs/debian/root/ ;echo "apt update && apt upgrade -y && apmt install wget gnupg nano -y && wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add && echo -e '\033[1;92m' '
+touch ../usr/var/lib/proot-distro/installed-rootfs/debian/root/ ;echo "apt update && apt upgrade -y && apt install wget gnupg nano -y && wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add && echo -e '\033[1;92m' '
 add repository Kali Linux:
 
 nano /etc/apt/sources.list
@@ -25,4 +25,5 @@ apt update && apt dist-upgrade && apt install gvfs-common gvfs-daemons gvfs-libs
 If you want to install GUI type:
 apt install xfce4 tigervnc-standalone-server dbus-x11
 ' " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
+cd ~
 proot-distro login debian
