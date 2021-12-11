@@ -20,7 +20,7 @@ deb http://http.kali.org/kali kali-rolling main non-free contrib
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 
 After you added the Kali Linux repository run:
-apt update && apt dist-upgrade && apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
+apt update && apt dist-upgrade -y && apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc -y
 
 If you want to install GUI type:
 apt install xfce4 tigervnc-standalone-server dbus-x11
