@@ -36,11 +36,3 @@ vnc-stop = stop vnc server
 if you want to edit screen resolution \
 $ nano /bin/vnc-start\
 vncserver -geometry (your screen resolution)
-
-After login to the vnc server,\
-wait for desktop loaded and logout\
-so that there are no error during installation\
-Go back to Termux
-
-
-$ apt install 
