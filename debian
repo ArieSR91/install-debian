@@ -23,7 +23,7 @@ After you added the Kali Linux repository run:
 apt update && apt dist-upgrade -y && apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc -y
 
 If you want to install GUI type:
-apt install xfce4 tigervnc-standalone-server dbus-x11
+apt install xfce4 tigervnc-standalone-server dbus-x11 -y
 ' " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 cd ~
 proot-distro login debian
