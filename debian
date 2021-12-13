@@ -22,9 +22,7 @@ touch /etc/apt/ ;echo '#Kali Repositoty
 deb http://http.kali.org/kali kali-rolling main non-free contrib
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
 apt update && apt dist-upgrade -y
-echo '
-Now run 
-apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc'
+apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 cd ~
 proot-distro login debian
