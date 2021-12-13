@@ -12,6 +12,7 @@ $ ./start
 If you want to install Kali Linux on Debian\
 type: \
 $ ls\
+install-kali
 $ chmod +x install-kali\
 $ ./install-kali
 ##### The above process is to add Kali Linux repository and changed Debian to Kali Linux
