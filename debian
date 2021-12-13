@@ -12,18 +12,15 @@ vncserver -kill :2
 vncserver" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-start
 touch ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/ ;echo "vncserver -kill :1
 vncserver -kill :2" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-stop
-touch ../usr/var/lib/proot-distro/installed-rootfs/debian/root/ ;echo "apt update && apt upgrade -y && apt install wget gnupg nano -y && chmod +x /bin/vnc-start && chmod +x /bin/vnc-stop && wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add && echo -e '\033[1;92m' '
-add repository Kali Linux:
-
-nano /etc/apt/sources.list
+touch ../usr/var/lib/proot-distro/installed-rootfs/debian/root/ ;echo "apt update && apt upgrade -y
+apt install wget gnupg nano -y
+chmod +x /bin/vnc-start
+chmod +x /bin/vnc-stop
+wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
+rm /etc/apt/sources.list
+touch /etc/apt/ ;echo '#Kali Repositoty
 deb http://http.kali.org/kali kali-rolling main non-free contrib
-deb-src http://http.kali.org/kali kali-rolling main non-free contrib
-
-After you added the Kali Linux repository run:
-apt update && apt dist-upgrade -y && apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
-
-If you want to install GUI type:
-apt install xfce4 tigervnc-standalone-server dbus-x11 -y
-' " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
+deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
+" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 cd ~
 proot-distro login debian
