@@ -21,10 +21,12 @@ rm /etc/apt/sources.list
 touch /etc/apt/ ;echo '#Kali Repositoty
 deb http://http.kali.org/kali kali-rolling main non-free contrib
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
-echo "
-Now run:
-'apt update && apt dist-upgrade && apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc'
-to change Debian to Kali Linux"
+echo '
+Now run 'apt update && apt dist-upgrade -y' to change Debian to Kali Linux
+
+to fix upgrade type:
+apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
+'
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 cd ~
 proot-distro login debian
