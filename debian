@@ -26,8 +26,7 @@ Now run
 apt update && apt dist-upgrade -y
 
 to fix upgrade type:
-apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
-'
+apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc'
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 cd ~
 proot-distro login debian
