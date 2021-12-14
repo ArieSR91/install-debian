@@ -1,5 +1,4 @@
 mv debian ~
-mv fix-audio.sh ~
 cd ~
 chmod +x debian
 ./debian
