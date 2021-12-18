@@ -1,5 +1,5 @@
 apt update && apt upgrade -y && apt install mc proot-distro pulseaudio -y && proot-distro install debian
-echo 'load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1' >> ../usr/etc/pulse/default.pa
+echo "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" >> ../usr/etc/pulse/default.pa
 echo "clear
 pulseaudio --start --exit-idle-time=-1
 # proot-distro login --user (username) debian
