@@ -23,5 +23,4 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/ap
 apt update && apt dist-upgrade -y
 apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
-cd ~
 proot-distro login debian
