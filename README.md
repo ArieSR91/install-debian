@@ -2,11 +2,10 @@
 Install Debian on Termux
 
 
-$ apt install git\
-$ git clone https://github.com/ArieSR91/install-debian \
-$ cd install-debian\
-$ chmod +x start\
-$ ./start
+$ apt install wget\
+$ wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/debian\
+$ chmod +x debian\
+$ ./debian
 
 #### After this operation complete you will automatically login to Debian as root
 If you want to install Kali Linux on Debian\
