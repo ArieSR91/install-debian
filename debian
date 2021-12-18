@@ -1,23 +1,23 @@
 apt update && apt upgrade -y && apt install mc proot-distro pulseaudio -y && proot-distro install debian
-touch ../usr/etc/pulse/ ;echo 'load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1' >> ../usr/etc/pulse/default.pa
+echo 'load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1' >> ../usr/etc/pulse/default.pa
 pulseaudio --start --exit-idle-time=-1
-touch $HOME/ ;echo "clear
+echo "clear
 pulseaudio --start --exit-idle-time=-1
 # proot-distro login --user (username) debian
 proot-distro login debian" >> $HOME/.bashrc
-touch ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/ ;echo "vncserver -kill :1
+echo "vncserver -kill :1
 vncserver -kill :2
 # vncserver -geometry 1280x720
 vncserver" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-start
-touch ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/ ;echo "vncserver -kill :1
+echo "vncserver -kill :1
 vncserver -kill :2" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-stop
-touch ../usr/var/lib/proot-distro/installed-rootfs/debian/root/ ;echo "apt update && apt upgrade -y
+echo "apt update && apt upgrade -y
 apt install wget gnupg nano -y
 chmod +x /bin/vnc-start
 chmod +x /bin/vnc-stop
 wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
 rm /etc/apt/sources.list
-touch /etc/apt/ ;echo '#Kali Repositoty
+echo '#Kali Repositoty
 deb http://http.kali.org/kali kali-rolling main non-free contrib
 deb-src http://http.kali.org/kali kali-rolling main non-free contrib' >> /etc/apt/sources.list
 apt update && apt dist-upgrade -y
