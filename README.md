@@ -3,8 +3,7 @@ Install Debian on Termux
 
 
 $ apt install wget\
-$ wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/debian\
-$ chmod +x debian\
+$ wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/debian && chmod +x debian\
 $ ./debian
 
 #### After this operation complete you will automatically login to Debian as root
