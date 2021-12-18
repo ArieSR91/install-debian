@@ -2,6 +2,7 @@
 Install Debian on Termux
 
 
+$ termux-setup-storage\
 $ apt install wget\
 $ wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/debian && chmod +x debian\
 $ ./debian
