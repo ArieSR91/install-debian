@@ -1,6 +1,5 @@
 apt update && apt upgrade -y && apt install mc proot-distro pulseaudio -y && proot-distro install debian
 echo 'load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1' >> ../usr/etc/pulse/default.pa
-pulseaudio --start --exit-idle-time=-1
 echo "clear
 pulseaudio --start --exit-idle-time=-1
 # proot-distro login --user (username) debian
@@ -24,4 +23,5 @@ apt update && apt dist-upgrade -y
 apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
 spd-say kali-linux-success installed
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
+pulseaudio --start --exit-idle-time=-1
 proot-distro login debian
