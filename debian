@@ -23,5 +23,7 @@ apt update && apt dist-upgrade -y
 apt install gvfs-common gvfs-daemons gvfs-libs udisks2 sudo mc
 spd-say kali-linux-success installed
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
+ln -s /sdcard
+ln -s ../usr/var/lib/proot-distro/installed-rootfs/debian
 pulseaudio --start --exit-idle-time=-1
 proot-distro login debian
