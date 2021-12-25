@@ -10,10 +10,10 @@ $ ./debian
 #### After this operation complete you will automatically login to Debian as root
 If you want to install Kali Linux on Debian\
 type: \
-$ ls\
+root@kali~# ls\
 install-kali\
-$ chmod +x install-kali\
-$ ./install-kali
+root@kali~# chmod +x install-kali\
+root@kali~# ./install-kali
 ##### The above process is to add Kali Linux repository and changed Debian to Kali Linux
 ### ------------------------------------------
 ## Kali Linux
@@ -31,5 +31,5 @@ vnc-stop = stop vnc server
 
 
 if you want to edit screen resolution \
-$ nano /bin/vnc-start\
+root@kali~# nano /bin/vnc-start\
 vncserver -geometry (your screen resolution)
