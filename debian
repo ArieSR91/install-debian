@@ -39,6 +39,9 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 # deb http://security.debian.org/debian-security bullseye-security main contrib' >> /etc/apt/sources.list
 apt update && apt dist-upgrade -y
 apt-mark hold udisks2
+mkdir .vnc
+wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/xstartup
+mv xstartup ~/.vnc
 apt install gvfs gvfs-common gvfs-daemons gvfs-libs sudo mc
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 pulseaudio --start --exit-idle-time=-1
