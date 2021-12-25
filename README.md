@@ -10,10 +10,10 @@ $ ./debian
 #### After this operation complete you will automatically login to Debian as root
 If you want to install Kali Linux on Debian\
 type: \
-root@kali~# ls\
+root@debian~# ls\
 install-kali\
-root@kali~# chmod +x install-kali\
-root@kali~# ./install-kali
+root@debian~# chmod +x install-kali\
+root@debian~# ./install-kali
 ##### The above process is to add Kali Linux repository and changed Debian to Kali Linux
 ### ------------------------------------------
 ## Kali Linux
