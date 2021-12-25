@@ -52,4 +52,5 @@ chmod +x user91
 rm user91
 rm debian
 ln -s  ../usr/var/lib/proot-distro/installed-rootfs/debian
+clear
 proot-distro login debian
