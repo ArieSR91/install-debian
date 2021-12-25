@@ -24,7 +24,8 @@ vncserver -kill :2
 vncserver" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-start
 echo "vncserver -kill :1
 vncserver -kill :2" >> ../usr/var/lib/proot-distro/installed-rootfs/debian/bin/vnc-stop
-echo "apt update && apt upgrade -y
+echo "apt-mark hold udisks2
+apt update && apt upgrade -y
 apt install wget gnupg nano -y
 chmod +x /bin/vnc-start
 chmod +x /bin/vnc-stop
