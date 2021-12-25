@@ -40,7 +40,6 @@ deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 apt update && apt dist-upgrade -y
 apt-mark hold udisks2
 apt install gvfs gvfs-common gvfs-daemons gvfs-libs sudo mc
-spd-say kali-linux-success-installed
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 ln -s /sdcard
 ln -s ../usr/var/lib/proot-distro/installed-rootfs/debian
