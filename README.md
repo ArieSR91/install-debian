@@ -22,7 +22,7 @@ do the update & upgrade command
 
 
 follow this step to install Kali Linux GUI \
-$ apt install xfce4 tigervnc-standalone-server dbus-x11
+root@kali~# apt install xfce4 tigervnc-standalone-server dbus-x11
 
 
 To login to vncviewer or Nethunter kex.\
