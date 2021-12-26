@@ -19,9 +19,10 @@ alias nf='neofetch'
 alias py2='python2'
 alias py3='python3'
 " >> $HOME/.bashrc
-
+echo "wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/vnc
+mv vnc /usr/local/bin
 chmod +x /usr/local/bin/vnc
-echo "apt-mark hold udisks2
+apt-mark hold udisks2
 apt update && apt upgrade -y
 apt install wget gnupg nano -y
 wget -q -O - https://archive.kali.org/archive-key.asc | apt-key add
