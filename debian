@@ -2,7 +2,7 @@ apt update && apt upgrade -y && apt install mc proot-distro pulseaudio -y && pro
 echo "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" >> ../usr/etc/pulse/default.pa
 echo "clear
 pulseaudio --start --exit-idle-time=-1
-## uncomment the command below if you want to login as user
+## uncomment the line below if you want to login as user
 # proot-distro login --user (username) debian
 proot-distro login debian
 
@@ -24,6 +24,7 @@ echo "#!/usr/bin/env bash
 
 export USER=root
 export HOME=/root
+## uncomment two line below if you want to login as user
 # export USER=(username)
 # export HOME=/home/(username)
 
@@ -31,7 +32,7 @@ function stop-vnc() {
     vncserver -kill :1
     vncserver -kill :2
     rm -rf /root/.vnc/localhost:1.pid
-    rm -rf /home/ArieSR91/.vnc/localhost:1.pid
+    rm -rf /home/(username)/.vnc/localhost:1.pid
     rm -rf /tmp/.X1-lock
     rm -rf /tmp/.X11-unix/X1
     return 0
@@ -40,7 +41,7 @@ function start-vnc() {
     vncserver -kill :1
     vncserver -kill :2
     rm -rf /root/.vnc/localhost:1.pid
-    rm -rf /home/ArieSR91/.vnc/localhost:1.pid
+    rm -rf /home/(username)/.vnc/localhost:1.pid
     rm -rf /tmp/.X1-lock
     rm -rf /tmp/.X11-unix/X1
     vncserver -geometry 1508x720
