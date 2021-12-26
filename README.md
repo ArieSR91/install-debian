@@ -30,9 +30,8 @@ vnc start = start vnc server\
 vnc stop = stop vnc server
 
 
-if you want to edit screen resolution \
-root@kali~# nano /bin/vnc-start\
-vncserver -geometry (your screen resolution)
-
+if you want to setting vnc \
+root@kali~# nano /usr/local/bin/vnc
+rename (username) to your username
 
 dont upgrade or install udisks2
