@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# by ArieSR91
+
+export USER=root
+export HOME=/root
+## uncomment two line below if you want to login as user
+# export USER=(username)
+# export HOME=/home/(username)
+
+function vnc-help() {
+    echo -e "
+type:
+
+vnc passwd = to set vnc password
+vnc start = to start vnc client
+vnc stop = to stop vnc client
+"
+    return 0
+}
+
+function passwd-vnc() {
+    vncpasswd
+    return 0
+}
+
+function stop-vnc() {
+    vncserver -kill :1
+    vncserver -kill :2
+    rm -rf /root/.vnc/localhost:1.pid
+    ## if you want to login as user rename /root to /home/(username)
+    rm -rf /root/.vnc/localhost:1.pid
+    rm -rf /tmp/.X1-lock
+    rm -rf /tmp/.X11-unix/X1
+    return 0
+}
+
+function start-vnc() {
+    vncserver -kill :1
+    vncserver -kill :2
+    vncserver -geometry 1508x720
+    sessions=$(vncserver -list | sed s/"TigerVNC"/"Kali Linux"/)
+    if [[ $sessions == *"590"* ]]; then
+        printf "${sessions}\n"
+        printf "\nYou can use the bVNC for login to GUI.\n"
+    fi
+    return 0
+}
+
+case $1 in
+    start)
+        start-vnc
+        ;;
+    stop)
+        stop-vnc
+        ;;
+    passwd)
+        passwd-vnc
+        ;;
+    *)
+        vnc-help
+        ;;
+esac
