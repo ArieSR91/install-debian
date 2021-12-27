@@ -3,7 +3,7 @@
 
 export USER=root
 export HOME=/root
-## uncomment two line below if you want to login as user
+## uncomment two line below and rename if you want to login as user
 # export USER=(username)
 # export HOME=/home/(username)
 
