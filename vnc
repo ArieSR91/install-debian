@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# by ArieSR91
+# Created by ArieSR91
 
 export USER=root
 export HOME=/root
