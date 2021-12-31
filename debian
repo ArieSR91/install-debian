@@ -38,7 +38,7 @@ apt-mark hold udisks2
 mkdir .vnc
 wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/xstartup
 mv xstartup ~/.vnc
-apt install gvfs gvfs-common gvfs-daemons gvfs-libs sudo mc
+apt install gvfs gvfs-common gvfs-daemons gvfs-libs sudo mc tigervnc-standalone-server dbus-x11
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 pulseaudio --start --exit-idle-time=-1
 wget https://raw.githubusercontent.com/ArieSR91/termux-kali-dark-style/main/user91
