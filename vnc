@@ -26,7 +26,6 @@ function passwd-vnc() {
 function stop-vnc() {
     vncserver -kill :1
     vncserver -kill :2
-    rm -rf /root/.vnc/localhost:1.pid
     ## if you want to login as user rename /root to /home/(username)
     rm -rf /root/.vnc/localhost:1.pid
     rm -rf /tmp/.X1-lock
@@ -37,7 +36,7 @@ function stop-vnc() {
 function start-vnc() {
     vncserver -kill :1
     vncserver -kill :2
-    vncserver -geometry 1508x720
+    vncserver -geometry 1280x720
     sessions=$(vncserver -list | sed s/"TigerVNC"/"Kali Linux"/)
     if [[ $sessions == *"590"* ]]; then
         printf "${sessions}\n"
