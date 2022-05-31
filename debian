@@ -41,7 +41,6 @@ mv xstartup ~/.vnc
 chmod +x ~/.vnc/xstartup
 apt install gvfs gvfs-common gvfs-daemons gvfs-libs sudo mc
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
-pulseaudio --start --exit-idle-time=-1
 wget https://raw.githubusercontent.com/ArieSR91/termux-kali-dark-style/main/user91
 chmod +x user91
 ./user91
@@ -49,4 +48,5 @@ rm user91
 rm debian
 ln -s  ../usr/var/lib/proot-distro/installed-rootfs/debian
 clear
+pulseaudio --start --exit-idle-time=-1
 proot-distro login debian
