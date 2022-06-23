@@ -14,8 +14,13 @@ root@debian~# ls\
 install-kali\
 root@debian~# chmod +x install-kali\
 root@debian~# ./install-kali
-##### The above process is to add Kali Linux repository and changed Debian to Kali Linux
-### ------------------------------------------
+##### When you start termux you will be automatically login to Debian
+##### You can also login by typing:
+kali -u = login as user
+kali -r = login as root
+
+###### To edit the username "nano ../usr/bin//kali"
+### -----------------------------------------------
 ## Kali Linux
 After Debian is changed to Kali Linux\
 do the update & upgrade command
