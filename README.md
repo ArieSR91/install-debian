@@ -13,12 +13,11 @@ type: \
 root@debian~# ls\
 install-kali\
 root@debian~# chmod +x install-kali\
-root@debian~# ./install-kali
-##### When you start termux you will be automatically login to Debian
-##### You can also login by typing:
-kali -u = login as user
-kali -r = login as root
-
+root@debian~# ./install-kali\
+##### When you start termux you will be automatically login to Debian\
+##### You can also login by typing:\
+kali -u = login as user\
+kali -r = login as root\
 ###### To edit the username "nano ../usr/bin//kali"
 ### -----------------------------------------------
 ## Kali Linux
