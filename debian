@@ -4,7 +4,7 @@ echo "clear
 pulseaudio --start --exit-idle-time=-1
 ## uncomment the line below if you want to login automatically as a user
 # proot-distro login --user (username) debian
-## if you want to login as a user, give comment on the link below
+## if you want to login as user, give comment on the link below
 proot-distro login debian
 
 alias ll='ls -l'
