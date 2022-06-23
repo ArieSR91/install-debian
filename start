@@ -1,4 +1,0 @@
-mv debian ~
-cd ~
-chmod +x debian
-./debian
