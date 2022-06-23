@@ -19,7 +19,9 @@ root@debian~# ./install-kali\
 You can also login by typing:\
 kali -u = login as user\
 kali -r = login as root
-###### To edit the username "nano ../usr/bin//kali"
+
+
+To edit the username "nano ../usr/bin//kali"
 ### ------------------------------------------
 ## Kali Linux
 After Debian is changed to Kali Linux\
