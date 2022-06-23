@@ -2,8 +2,9 @@ apt update && apt upgrade -y && apt install mc proot-distro pulseaudio -y && pro
 echo "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" >> ../usr/etc/pulse/default.pa
 echo "clear
 pulseaudio --start --exit-idle-time=-1
-## uncomment the line below if you want to login as user
+## uncomment the line below if you want to login automatically as a user
 # proot-distro login --user (username) debian
+## if you want to login as a user, give comment on the link below
 proot-distro login debian
 
 alias ll='ls -l'
