@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Created by ArieSR91
+user="$(whoami)"
 
 function vnc-help() {
     echo -e "
@@ -20,17 +21,7 @@ function passwd-vnc() {
 function stop-vnc() {
     vncserver -kill :1
     vncserver -kill :2
-    ## if you want to login as user rename /root to /home/(username)
-    rm -rf /home/(username)/.vnc/localhost:1.pid
-    rm -rf /tmp/.X1-lock
-    rm -rf /tmp/.X11-unix/X1
-    return 0
-}
-
-function stop-vnc-root() {
-    vncserver -kill :1
-    vncserver -kill :2
-    ## if you want to login as user rename /root to /home/(username)
+    rm -rf /home/$user/.vnc/localhost:1.pid
     rm -rf /root/.vnc/localhost:1.pid
     rm -rf /tmp/.X1-lock
     rm -rf /tmp/.X11-unix/X1
@@ -40,25 +31,18 @@ function stop-vnc-root() {
 function start-vnc() {
     vncserver -kill :1
     vncserver -kill :2
-    export USER=(username)
-    export HOME=/home/(username)
-    # vncserver -geometry 1508x720
-    vncserver -geometry 1280x720
-    sessions=$(vncserver -list | sed s/"TigerVNC"/"Kali Linux"/)
-    if [[ $sessions == *"590"* ]]; then
-        printf "${sessions}\n"
-        printf "\nYou can use the bVNC for login to GUI.\n"
+    export USER=$user
+    export HOME=/home/$user
+    if [ "$EUID" -eq 0 ]; then
+        export HOME=/root
     fi
-    return 0
-}
-
-function start-vnc-root() {
-    vncserver -kill :1
-    vncserver -kill :2
-    export USER=root
-    export HOME=/root
-    # vncserver -geometry 1508x720
-    vncserver -geometry 1280x720
+    echo "
+Example: 1280x720
+         1508x720
+"
+    read -p 'Your screen resolution: ' resolution;
+    vncserver -geometry $resolution
+    # vncserver -geometry 1280x720
     sessions=$(vncserver -list | sed s/"TigerVNC"/"Kali Linux"/)
     if [[ $sessions == *"590"* ]]; then
         printf "${sessions}\n"
@@ -73,12 +57,6 @@ case $1 in
         ;;
     stop)
         stop-vnc
-        ;;
-    start-r)
-        start-vnc-root
-        ;;
-    stop-r)
-        stop-vnc-root
         ;;
     passwd)
         passwd-vnc
