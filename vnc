@@ -38,7 +38,7 @@ function start-vnc() {
     fi
     echo "
 Example: 1280x720
-         1508x720
+         1560x720
 "
     read -p 'Your screen resolution: ' resolution;
     vncserver -geometry $resolution
