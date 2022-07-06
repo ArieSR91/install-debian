@@ -28,7 +28,7 @@ After Debian is changed to Kali Linux\
 do the update & upgrade command
 
 
-follow this step to install Kali Linux GUI \
+follow this step to install Kali Linux GUI \\
 root@kali~# apt install xfce4 tigervnc-standalone-server dbus-x11
 
 
