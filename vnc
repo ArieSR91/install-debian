@@ -42,7 +42,6 @@ Example: 1280x720
 "
     read -p 'Your screen resolution: ' resolution;
     vncserver -geometry $resolution
-    # vncserver -geometry 1280x720
     sessions=$(vncserver -list | sed s/"TigerVNC"/"Kali Linux"/)
     if [[ $sessions == *"590"* ]]; then
         printf "${sessions}\n"
