@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# Created by Arie-SR91
+
+USR="$(whoami)"
+
+function vnc-help() {
+    echo -e "
+type:
+
+vnc passwd = to set vnc password
+vnc start = to start vnc client
+vnc stop = to stop vnc client
+"
+    return 0
+}
+
+function passwd-vnc() {
+    vncpasswd
+    return 0
+}
+
+function stop-vnc() {
+    vncserver -kill :1 | sed s/"Tigervnc"/"Kali Linux"/
+    vncserver -kill :2 | sed s/"Tigervnc"/"Kali Linux"/
+    rm -rf /tmp/.X1-lock
+    rm -rf /tmp/.X11-unix/X1
+    if [ "$EUID" -eq 0 ]; then # root user
+        rm -rf /root/.vnc/localhost:1.pid
+    else
+        rm -rf /home/$USR/.vnc/localhost:1.pid
+    fi
+    return 0
+}
+
+function status-vnc() {
+    sessions=$(vncserver -list | sed s/"TigerVNC"/"Kali Linux"/)
+    if [[ $sessions == *"590"* ]]; then
+        printf "\n${sessions}\n"
+        printf "\nYou can use the bVNC for login to GUI.\n"
+    fi
+    return 0
+}
+
+function start-vnc() {
+    vncserver -kill :1
+    vncserver -kill :2
+    rm -rf /tmp/.X1-lock
+    rm -rf /tmp/.X11-unix/X1
+    if [ "$EUID" -eq 0 ]; then # root user
+        rm -rf /root/.vnc/localhost:1.pid
+    else
+        rm -rf /home/$USR/.vnc/localhost:1.pid
+    fi
+    export USER=$USR
+    if [ "$EUID" -eq 0 ]; then # root user
+        export HOME=/root
+    else
+        export HOME=/home/$USR
+    fi
+    echo "
+Example: 1508x720
+         1280x720
+"
+    read -p "Screen Resolution: " ratio;
+    vncserver -geometry $ratio
+    sessions=$(vncserver -list | sed s/"TigerVNC"/"Kali Linux"/)
+    if [[ $sessions == *"590"* ]]; then
+        printf "${sessions}\n"
+        printf "\nYou can use the bVNC for login to GUI.\n"
+    fi
+    if [ ! -f /home/$USR/.vncrc ]; then
+	vncrc_line="\$geometry = \"${ratio}\";"
+	echo $vncrc_line > /home/$USR/.vncrc
+    fi
+    return 0
+}
+
+case $1 in
+    start)
+        start-vnc
+        ;;
+    stop)
+        stop-vnc
+        ;;
+    status)
+        status-vnc
+        ;;
+    passwd)
+        passwd-vnc
+        ;;
+    *)
+        vnc-help
+        ;;
+esac
