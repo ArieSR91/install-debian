@@ -45,7 +45,7 @@ mkdir .vnc
 wget https://raw.githubusercontent.com/ArieSR91/install-debian/main/xstartup
 mv xstartup ~/.vnc
 chmod +x ~/.vnc/xstartup
-apt install gvfs gvfs-common gvfs-daemons gvfs-libs sudo mc
+apt install gvfs gvfs-common gvfs-daemons gvfs-libs sudo mc speech-dispatcher
 " >> ../usr/var/lib/proot-distro/installed-rootfs/debian/root/install-kali
 wget https://raw.githubusercontent.com/ArieSR91/termux-kali-dark-style/main/user91
 chmod +x user91
