@@ -75,7 +75,7 @@ case $1 in
         ;;
 esac
 " >> ../usr/bin/kali
-chmod +x /usr/bin/kali
+chmod +x ../usr/bin/kali
 clear
 pulseaudio --start --exit-idle-time=-1
 proot-distro login debian
