@@ -55,23 +55,23 @@ rm debian
 ln -s  ../usr/var/lib/proot-distro/installed-rootfs/debian
 echo "#!/usr/bin/env bash
 
-function user() {
-    ## uncomment line below to login as user 
-    # proot-distro login --user (username) debian
-    return 0
-}
-
 function root() {
+    pulseaudio --start --exit-idle-time=-1
     proot-distro login debian
     return 0
 }
 
+function user() {
+    pulseaudio --start --exit-idle-time=-1
+    proot-distro login --user ArieSR91 debian
+}
+
 case $1 in
-    -u)
-        user
-        ;;
     -r)
         root
+        ;;
+    *)
+        user
         ;;
 esac
 " >> ../usr/bin/kali
